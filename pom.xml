@@ -6,7 +6,7 @@
 
     <groupId>org.ruivieira</groupId>
     <artifactId>jssm</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1</version>
 
     <dependencies>
         <dependency>
@@ -21,5 +21,13 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-ruivieira-maven</id>
+            <name>ruivieira-maven</name>
+            <url>https://api.bintray.com/maven/ruivieira/maven/jssm/;publish=1</url>
+        </repository>
+    </distributionManagement>
 
 </project>
