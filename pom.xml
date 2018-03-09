@@ -6,7 +6,45 @@
 
     <groupId>org.ruivieira</groupId>
     <artifactId>jssm</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <repositories>
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>bintray-ruivieira-maven</id>
+                    <name>bintray</name>
+                    <url>https://dl.bintray.com/ruivieira/maven</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>bintray-ruivieira-maven</id>
+                    <name>bintray-plugins</name>
+                    <url>https://dl.bintray.com/ruivieira/maven</url>
+                </pluginRepository>
+            </pluginRepositories>
+            <id>bintray</id>
+        </profile>
+    </profiles>
 
     <dependencies>
         <dependency>

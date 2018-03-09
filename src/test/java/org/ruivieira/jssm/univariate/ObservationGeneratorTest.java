@@ -1,0 +1,29 @@
+package org.ruivieira.jssm.univariate;
+
+import org.apache.commons.math3.linear.ArrayRealVector;
+import org.apache.commons.math3.linear.RealVector;
+import org.junit.Test;
+import org.ruivieira.jssm.common.Structure;
+
+import static org.apache.commons.math3.linear.MatrixUtils.createRealIdentityMatrix;
+import static org.junit.Assert.*;
+
+public class ObservationGeneratorTest {
+
+    @Test
+    public void gaussian() {
+
+        final int nobs = 100;
+
+        final Structure structure = new Structure(createRealIdentityMatrix(1),
+                createRealIdentityMatrix(1),
+                createRealIdentityMatrix(1));
+
+        final RealVector[] states = StageGenerator.states(nobs, structure, new ArrayRealVector(1));
+        final RealVector[] observations = ObservationGenerator.gaussian(states, structure, 1.0);
+
+        assertEquals(nobs, observations.length);
+
+
+    }
+}
