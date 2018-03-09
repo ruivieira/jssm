@@ -16,12 +16,11 @@ public class ObservationGenerator {
                                         Structure structure,
                                         double V) {
 
-        final RealMatrix Ft = structure.getF().transpose();
+        final RealMatrix Ft = structure.getF();
 
-        final Stream<RealVector> means = Arrays.stream(states).map(Ft::preMultiply);
+        final Stream<Double> means = Arrays.stream(states).map(Ft::preMultiply).map(mean -> mean.getEntry(0));
 
-        return means.map(mean -> createRealVector(new double[]{new NormalDistribution(mean.getEntry(0), V)
-                .sample()}))
+        return means.map(mean -> createRealVector(new double[]{new NormalDistribution(mean, V).sample()}))
                 .toArray(RealVector[]::new);
 
     }

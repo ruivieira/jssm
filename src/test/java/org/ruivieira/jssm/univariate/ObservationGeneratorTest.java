@@ -11,19 +11,29 @@ import static org.junit.Assert.*;
 public class ObservationGeneratorTest {
 
     @Test
-    public void gaussian() {
+    public void gaussian_locallyconstant() {
 
         final int nobs = 100;
 
-        final Structure structure = new Structure(createRealIdentityMatrix(1),
-                createRealIdentityMatrix(1),
-                createRealIdentityMatrix(1));
+        final Structure structure = UnivariateStructure.createLocallyConstant();
 
         final RealVector[] states = StageGenerator.states(nobs, structure, new ArrayRealVector(1));
         final RealVector[] observations = ObservationGenerator.gaussian(states, structure, 1.0);
 
         assertEquals(nobs, observations.length);
-
-
     }
+
+    @Test
+    public void gaussian_locallylinear() {
+
+        final int nobs = 100;
+
+        final Structure structure = UnivariateStructure.createLocallyLinear();
+
+        final RealVector[] states = StageGenerator.states(nobs, structure, new ArrayRealVector(2));
+        final RealVector[] observations = ObservationGenerator.gaussian(states, structure, 1.0);
+
+        assertEquals(nobs, observations.length);
+    }
+
 }
