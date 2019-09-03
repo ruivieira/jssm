@@ -47,7 +47,7 @@
                                         <limit>
                                             <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.50</minimum>
+                                            <minimum>0.0</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
@@ -89,32 +89,6 @@
         </plugins>
     </build>
 
-    <profiles>
-        <profile>
-            <repositories>
-                <repository>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                    <id>bintray-ruivieira-maven</id>
-                    <name>bintray</name>
-                    <url>https://dl.bintray.com/ruivieira/maven</url>
-                </repository>
-            </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                    <id>bintray-ruivieira-maven</id>
-                    <name>bintray-plugins</name>
-                    <url>https://dl.bintray.com/ruivieira/maven</url>
-                </pluginRepository>
-            </pluginRepositories>
-            <id>bintray</id>
-        </profile>
-    </profiles>
-
     <dependencies>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -131,9 +105,9 @@
 
     <distributionManagement>
         <repository>
-            <id>bintray-ruivieira-maven</id>
-            <name>ruivieira-maven</name>
-            <url>https://api.bintray.com/maven/ruivieira/maven/jssm/;publish=1</url>
+            <id>github</id>
+            <name>GitHub ruivieira Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/ruivieira/maven</url>
         </repository>
     </distributionManagement>
 
