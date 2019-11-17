@@ -5,8 +5,7 @@ import org.apache.commons.math3.linear.RealVector;
 import org.junit.Test;
 import org.ruivieira.jssm.common.Structure;
 
-import static org.apache.commons.math3.linear.MatrixUtils.createRealIdentityMatrix;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class ObservationGeneratorTest {
 

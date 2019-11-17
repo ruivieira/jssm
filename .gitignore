@@ -24,3 +24,4 @@ hs_err_pid*
 /jssm.ipr
 *.iws
 /target/
+docs/.ipynb_checkpoints
